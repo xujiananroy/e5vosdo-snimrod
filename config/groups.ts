@@ -8,7 +8,8 @@ export interface Link {
     | "email"
     | "phone"
     | "classroom"
-    | "youtube";
+    | "youtube"
+    | "spotify";
   title: string;
   value: string;
 }
@@ -24,13 +25,11 @@ interface Group {
 export const clubsOrder: string[] = [
   "Eötvös Podcast",
   "FLC EJG",
+  "Filmklub",
   "Eötvös Diák",
-  "Eötvös Média",
-  "Technikusi Szervezet",
-  "Eötvös Alkotó Műhely",
-  "ZöldBiz",
 
-  "Debate Club",
+  "ZöldBiz",
+  "Eötvös Média",
 
   "Elsősegélynyújtó Diákkör",
 
@@ -38,16 +37,19 @@ export const clubsOrder: string[] = [
   "Eötvös Vakondok",
   "Kéktúra-szakkör",
   "TársasTár",
+  "Debate Club",
 
   "Színjátszó",
-  "MUN-Club",
   "Nekünk X",
-  "Sakk - klub",
-  "Sulirádió",
 
+  "Technikusi Szervezet",
+  "Eötvös Alkotó Műhely",
 
-
+  "MUN-Club",
   "Bimun",
+
+  "Sulirádió",
+  "Sakk - klub",
 ];
 
 export const clubsConfig: Group[] = [
@@ -259,14 +261,19 @@ export const clubsConfig: Group[] = [
   {
     title: "Sulirádió",
     details:
-      "Mi irányítjuk az iskolai szünetekben és az Eötvös programjain a stúdiót. Mi vagyunk az iskola audió formájú hangulatfelelősei. Olyanokat várunk a csapatunkba, akik képesek a közjót, az iskola hangulatát szolgálni empatikus, alázatos módon, nem pedig a saját extrém ízlésüket prezentálni ezer állampolgár kínzatásául.",
+      "Mi irányítjuk az iskolai szünetekben és az Eötvös programjain a stúdiót. Mi vagyunk az iskola audió formájú hangulatfelelősei. Olyanokat várunk csapatunkba, akik képesek a közjót, az iskola hangulalát empatikus és alázatos módon szolgálni. Csatlakozz ha te is zenefelelős szeretnél lenni!",
     image: "/groups/suliradio.png",
     description: "",
     links: [
       {
         title: "Iskolarádió Instagram",
-        value: "https://www.instagram.com/eotvossuliradio/",
+        value: "https://www.instagram.com/e5vos.suliradio/",
         type: "instagram",
+      },
+      {
+        title: "Iskolarádió Spotify",
+        value: "https://open.spotify.com/playlist/4qsZY2JmKxdsZ7KETT1qbb",
+        type: "spotify",
       },
     ],
   },
@@ -433,6 +440,21 @@ export const clubsConfig: Group[] = [
       {
         title: "FLC EJG Instagram",
         value: "https://www.instagram.com/flc_ejg/",
+        type: "instagram",
+      },
+    ],
+    new: true,
+  },
+  {
+    title: "Filmklub",
+    image: "/groups/filmklub.jpg",
+    description: "",
+    details:
+      "Péntekenként, 15:30-tól bombasztikus filmeket nézünk mint egy nagy család és beszélgetünk is róluk.",
+    links: [
+      {
+        title: "Filmklub Instagram",
+        value: "https://www.instagram.com/filmklub.ejg",
         type: "instagram",
       },
     ],

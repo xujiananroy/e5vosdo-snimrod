@@ -33,7 +33,7 @@ export const Events = () => {
       {events.map(
         (event, index) =>
           (event.show_time != undefined
-            ? new Date(event.show_time).getTime() - 21 * 24 * 60 * 60 * 1000 <
+            ? new Date(event.show_time).getTime() - 28 * 24 * 60 * 60 * 1000 <
               new Date().getTime()
             : true) &&
           new Date(event.hide_time) > new Date() && (
@@ -60,22 +60,18 @@ export const Events = () => {
                         weekday: "long",
                       })}
                     </Chip>
-                  ) : (
-                    <></>
-                  )}
-                  {event.tags != undefined ? (
-                    event.tags.map((tag, index) => (
-                      <Chip
-                        key={tag + "" + index}
-                        className="bg-selfprimary-200"
-                        size="sm"
-                      >
-                        {tag}
-                      </Chip>
-                    ))
-                  ) : (
-                    <></>
-                  )}
+                  ) : null}
+                  {event.tags != undefined
+                    ? event.tags.map((tag, index) => (
+                        <Chip
+                          key={tag + "" + index}
+                          className="bg-selfprimary-200"
+                          size="sm"
+                        >
+                          {tag}
+                        </Chip>
+                      ))
+                    : null}
                   {event.image ? (
                     <Chip size="sm" variant="flat">
                       <Link
@@ -85,15 +81,13 @@ export const Events = () => {
                         Kép forrása
                       </Link>
                     </Chip>
-                  ) : (
-                    <></>
-                  )}
+                  ) : null}
                 </div>
               </SideCard>
             </div>
           ),
       )}
-      {!noneEvent ? <p>Nincs esemény</p> : <></>}
+      {!noneEvent ? <p>Nincs esemény</p> : null}
     </div>
   );
 };
